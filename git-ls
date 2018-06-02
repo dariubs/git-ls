@@ -1,0 +1,9 @@
+#!/bin/bash
+DIRECTORY=~/git
+
+if [ -d "$DIRECTORY" ]; then
+  ls $DIRECTORY
+else
+  mkdir -v $DIRECTORY
+  ls $DIRECTORY
+fi
