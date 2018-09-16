@@ -1,0 +1,11 @@
+#!/bin/bash
+DIRECTORY=~/git
+
+cd $DIRECTORY
+if [ -d "$1" ]; then
+  echo "directory is already exists."
+else
+  mkdir -v $1
+  cd $1
+  git init
+fi
