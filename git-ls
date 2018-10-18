@@ -1,9 +1,21 @@
 #!/bin/bash
-DIRECTORY=~/git
+function githome {
+  dir=~/.gitls
 
-if [ -d "$DIRECTORY" ]; then
-  ls $DIRECTORY
-else
-  mkdir -v $DIRECTORY
-  ls $DIRECTORY
-fi
+  if [ -d "$dir" ]; then
+    gh=$(<~/.gitls)
+    # TODO: check if gh not empty
+    if [ -z "$gh"]; then
+      echo "$gh"
+    else
+      # TODO: check if directory exists. if not ask user to create
+      echo ~/git
+    fi
+  else
+    echo ~/git
+  fi
+}
+
+gt=$(githome)
+
+ls $gt
